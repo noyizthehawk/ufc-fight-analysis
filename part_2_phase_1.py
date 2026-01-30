@@ -74,25 +74,6 @@ if __name__ == "__main__":
         .shift(1).rolling(5, min_periods=1).mean()
         .reset_index(0, drop=True).round(2)
     )
-    # Sample fighter rows
-    print(f"\n{'='*80}")
-    print(f"SAMPLE FIGHTER CAREER")
-    print(f"{'='*80}")
-    
-    sample_fighter = fighters_df[fighters_df['name'] == fighters_df['name'].value_counts().index[0]]
-    print(f"\nFighter: {sample_fighter['name'].iloc[0]}")
-    print(f"Total UFC Fights: {len(sample_fighter)}")
-    print(f"\n{sample_fighter[['date', 'fight_number', 'win_flag_indicator', 'age_at_fight', 'rolling_win_rate_3', 'rolling_sig_str_landed_3', 'rolling_sig_str_absorbed_3']].head(10).to_string()}")
-    
-    print(f"\n{'='*80}")
-    print(f"DATASET SUMMARY")
-    print(f"{'='*80}")
-    print(f"Total rows: {len(fighters_df)}")
-    print(f"Unique fighters: {fighters_df['name'].nunique()}")
-    print(f"Date range: {fighters_df['date'].min()} to {fighters_df['date'].max()}")
-    
    
-
-
     # Write merged DataFrame to CSV
     fighters_df.to_csv("csv/fighter_level_data.csv", index=False)
