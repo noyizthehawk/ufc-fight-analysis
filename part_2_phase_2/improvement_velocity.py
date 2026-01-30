@@ -104,7 +104,7 @@ fighters_df['performance_category'] = fighters_df['performance_0_100'].apply(per
 
 print(fighters_df[['name', 'style', 'performance_0_100', 'performance_category']].head())
 
-fighter_name = "Ilia Topuria"
+fighter_name = "Ilia Topuria "
 adesanya_fights = fighters_df[fighters_df["name"] == fighter_name].sort_values("fight_number")
 print(
     adesanya_fights[
